@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[メモ置き場]]></title>
-  <link href="http://aki-017.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | メモ置き場]]></title>
+  <link href="http://aki-017.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://aki-017.github.com/"/>
   <updated>2012-12-03T23:34:53+09:00</updated>
   <id>http://aki-017.github.com/</id>
