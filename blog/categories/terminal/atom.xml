@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: terminal | メモ置き場]]></title>
+  <link href="http://blog.aki017.info/blog/categories/terminal/atom.xml" rel="self"/>
+  <link href="http://blog.aki017.info/"/>
+  <updated>2012-12-04T23:48:15+09:00</updated>
+  <id>http://blog.aki017.info/</id>
+  <author>
+    <name><![CDATA[aki017]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[tmuxを使って複数ホストにsshする奴]]></title>
+    <link href="http://blog.aki017.info/blog/2012/12/04/tmux-ssh/"/>
+    <updated>2012-12-04T23:44:00+09:00</updated>
+    <id>http://blog.aki017.info/blog/2012/12/04/tmux-ssh</id>
+    <content type="html"><![CDATA[<p>こんな感じになりました
+<div><script src='https://gist.github.com/4204643.js?file='></script>
+<noscript><pre><code>#!/bin/bash
+
+tmux start-server
+tmux new-session -d -n tmux-ssh-window -s tmux-ssh
+
+for i in ここにスペース区切りでホストを並べる
+do
+    tmux split-window -h -t tmux-ssh-window
+    tmux send-keys &quot;ssh $i&quot; C-m
+    tmux select-layout -t tmux-ssh-window main-horizontal
+done
+
+tmux select-pane -t 0
+tmux set-window-option synchronize-panes on
+tmux attach-session -t tmux-ssh</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>
