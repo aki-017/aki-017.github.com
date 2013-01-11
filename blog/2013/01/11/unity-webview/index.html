@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>tmuxを使って複数ホストにsshする奴 - メモ置き場</title>
+  <title>Unity-WebView - メモ置き場</title>
   <meta name="author" content="aki017">
 
   
-  <meta name="description" content="こんな感じになりました #!/bin/bash tmux start-server
-tmux new-session -d -n tmux-ssh-window -s tmux-ssh for i in ここにスペース区切りでホストを並べる
-do tmux split-window -h -t &hellip;">
+  <meta name="description" content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ do tmux split-window -h -t &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.aki017.info/blog/2012/12/04/tmux-ssh/">
+  <link rel="canonical" href="http://blog.aki017.info/blog/2013/01/11/unity-webview/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,7 +68,7 @@ do tmux split-window -h -t &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Tmuxを使って複数ホストにsshする奴</h1>
+      <h1 class="entry-title">Unity-WebView</h1>
     
     
       <p class="meta">
@@ -85,7 +84,7 @@ do tmux split-window -h -t &hellip;">
   
 
 
-<time datetime="2012-12-04T23:44:00+09:00" pubdate data-updated="true">Dec 4<span>th</span>, 2012</time>
+<time datetime="2013-01-11T12:33:00+09:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -94,24 +93,49 @@ do tmux split-window -h -t &hellip;">
   </header>
 
 
-<div class="entry-content"><p>こんな感じになりました</p>
+<div class="entry-content"><div><script src='https://gist.github.com/4507728.js?file='></script>
+<noscript><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.unity3d.player&quot;
+    android:installLocation=&quot;preferExternal&quot;
+    android:versionCode=&quot;1&quot;
+    android:versionName=&quot;1.0&quot;&gt;
+    &lt;supports-screens
+        android:smallScreens=&quot;true&quot;
+        android:normalScreens=&quot;true&quot;
+        android:largeScreens=&quot;true&quot;
+        android:xlargeScreens=&quot;true&quot;
+        android:anyDensity=&quot;true&quot;/&gt;
 
-<div><script src='https://gist.github.com/4204643.js?file='></script>
-<noscript><pre><code>#!/bin/bash
-
-tmux start-server
-tmux new-session -d -n tmux-ssh-window -s tmux-ssh
-
-for i in ここにスペース区切りでホストを並べる
-do
-    tmux split-window -h -t tmux-ssh-window
-    tmux send-keys &quot;ssh $i&quot; C-m
-    tmux select-layout -t tmux-ssh-window main-horizontal
-done
-
-tmux select-pane -t 0
-tmux set-window-option synchronize-panes on
-tmux attach-session -t tmux-ssh</code></pre></noscript></div>
+    &lt;application
+        android:icon=&quot;@drawable/app_icon&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:debuggable=&quot;true&quot;&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerProxyActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerNativeActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;meta-data android:name=&quot;android.app.lib_name&quot; android:value=&quot;unity&quot; /&gt;
+            &lt;meta-data android:name=&quot;unityplayer.ForwardNativeEventsToDalvik&quot; android:value=&quot;true&quot; /&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.VideoPlayer&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></pre></noscript></div>
 
 
 
@@ -137,12 +161,12 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
   
 
 
-<time datetime="2012-12-04T23:44:00+09:00" pubdate data-updated="true">Dec 4<span>th</span>, 2012</time>
+<time datetime="2013-01-11T12:33:00+09:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/terminal/'>terminal</a>
+    <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/programing/'>Programing</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>
   
 </span>
 
@@ -151,7 +175,7 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.aki017.info/blog/2012/12/04/tmux-ssh/" data-via="aki017" data-counturl="http://blog.aki017.info/blog/2012/12/04/tmux-ssh/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.aki017.info/blog/2013/01/11/unity-webview/" data-via="aki017" data-counturl="http://blog.aki017.info/blog/2013/01/11/unity-webview/" >Tweet</a>
   
   
   
@@ -160,10 +184,8 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/12/04/dotfiles/" title="Previous Post: dotfilesいじくった">&laquo; dotfilesいじくった</a>
+        <a class="basic-alignment left" href="/blog/2013/01/01/rails/" title="Previous Post: rails">&laquo; rails</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/12/08/freshpersonscamp/" title="Next Post: フレッシュパーゾンズキャンプ　※原文まま">フレッシュパーゾンズキャンプ　※原文まま &raquo;</a>
       
     </p>
   </footer>
@@ -275,8 +297,8 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.aki017.info/blog/2012/12/04/tmux-ssh/';
-        var disqus_url = 'http://blog.aki017.info/blog/2012/12/04/tmux-ssh/';
+        var disqus_identifier = 'http://blog.aki017.info/blog/2013/01/11/unity-webview/';
+        var disqus_url = 'http://blog.aki017.info/blog/2013/01/11/unity-webview/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | メモ置き場]]></title>
+  <link href="http://blog.aki017.info/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://blog.aki017.info/"/>
+  <updated>2013-01-11T12:45:32+09:00</updated>
+  <id>http://blog.aki017.info/</id>
+  <author>
+    <name><![CDATA[aki017]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Unity-WebView]]></title>
+    <link href="http://blog.aki017.info/blog/2013/01/11/unity-webview/"/>
+    <updated>2013-01-11T12:33:00+09:00</updated>
+    <id>http://blog.aki017.info/blog/2013/01/11/unity-webview</id>
+    <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/4507728.js?file='></script>
+<noscript><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.unity3d.player&quot;
+    android:installLocation=&quot;preferExternal&quot;
+    android:versionCode=&quot;1&quot;
+    android:versionName=&quot;1.0&quot;&gt;
+    &lt;supports-screens
+        android:smallScreens=&quot;true&quot;
+        android:normalScreens=&quot;true&quot;
+        android:largeScreens=&quot;true&quot;
+        android:xlargeScreens=&quot;true&quot;
+        android:anyDensity=&quot;true&quot;/&gt;
+
+    &lt;application
+		android:icon=&quot;@drawable/app_icon&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:debuggable=&quot;true&quot;&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerProxyActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerNativeActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;meta-data android:name=&quot;android.app.lib_name&quot; android:value=&quot;unity&quot; /&gt;
+            &lt;meta-data android:name=&quot;unityplayer.ForwardNativeEventsToDalvik&quot; android:value=&quot;true&quot; /&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.VideoPlayer&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

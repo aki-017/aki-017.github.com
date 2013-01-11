@@ -9,7 +9,8 @@
   <meta name="author" content="aki017">
 
   
-  <meta name="description" content="僕が初めて彼にあったのは、&#8230; ">
+  <meta name="description" content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +65,127 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/11/unity-webview/">Unity-WebView</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-11T12:33:00+09:00" pubdate data-updated="true">Jan 11<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/11/unity-webview/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div><script src='https://gist.github.com/4507728.js?file='></script>
+<noscript><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.unity3d.player&quot;
+    android:installLocation=&quot;preferExternal&quot;
+    android:versionCode=&quot;1&quot;
+    android:versionName=&quot;1.0&quot;&gt;
+    &lt;supports-screens
+        android:smallScreens=&quot;true&quot;
+        android:normalScreens=&quot;true&quot;
+        android:largeScreens=&quot;true&quot;
+        android:xlargeScreens=&quot;true&quot;
+        android:anyDensity=&quot;true&quot;/&gt;
+
+    &lt;application
+        android:icon=&quot;@drawable/app_icon&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:debuggable=&quot;true&quot;&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerProxyActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.UnityPlayerNativeActivity&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+            &lt;meta-data android:name=&quot;android.app.lib_name&quot; android:value=&quot;unity&quot; /&gt;
+            &lt;meta-data android:name=&quot;unityplayer.ForwardNativeEventsToDalvik&quot; android:value=&quot;true&quot; /&gt;
+        &lt;/activity&gt;
+        &lt;activity android:name=&quot;com.unity3d.player.VideoPlayer&quot;
+                  android:label=&quot;@string/app_name&quot;
+                  android:configChanges=&quot;fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen&quot;&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/01/rails/">Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-01T02:51:00+09:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/01/rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Server作る</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -398,46 +520,9 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/03/installed-octopress/">Octopressインストールしました</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-03T23:27:00+09:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/03/installed-octopress/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前回サーバーが死んでからブログが消えてたので復活させました。
-今回はwordpress使わずにOctopress+githubで運用する事にしました。 かっこいいから</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -450,6 +535,14 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/11/unity-webview/">Unity-WebView</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/rails/">rails</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/12/09/sein_b/">@sein_bという人物について</a>
       </li>
     
@@ -459,14 +552,6 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
     
       <li class="post">
         <a href="/blog/2012/12/09/nyaruko/">ニャル子</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/08/afterdinner/">晩ご飯</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/08/freshpersonscamp-dinner/">晩ご飯</a>
       </li>
     
   </ul>
@@ -528,7 +613,7 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - aki017 -
+  Copyright &copy; 2013 - aki017 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: server | メモ置き場]]></title>
+  <link href="http://blog.aki017.info/blog/categories/server/atom.xml" rel="self"/>
+  <link href="http://blog.aki017.info/"/>
+  <updated>2013-01-11T12:45:32+09:00</updated>
+  <id>http://blog.aki017.info/</id>
+  <author>
+    <name><![CDATA[aki017]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[rails]]></title>
+    <link href="http://blog.aki017.info/blog/2013/01/01/rails/"/>
+    <updated>2013-01-01T02:51:00+09:00</updated>
+    <id>http://blog.aki017.info/blog/2013/01/01/rails</id>
+    <content type="html"><![CDATA[<p>Server作る</p>
+]]></content>
+  </entry>
+  
+</feed>
