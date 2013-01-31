@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Programing - メモ置き場</title>
+  <title>京都まゆまろ杯　第1回スマホアプリコンテストの脆弱性を報告しました - メモ置き場</title>
   <meta name="author" content="aki017">
 
   
-  <meta name="description" content="Category: Programing">
+  <meta name="description" content="京都まゆまろ杯　第1回スマホアプリコンテスト 日本が誇る歴史的世界都市を擁し、多様な地理、歴史、産業を育む「京都府」から【世界に羽ばたく】 エンジニアやクリエイターを生み出す。 らしいです 報告しました。 報告した内容は以下の2点です XSS
+CSRF XSSについて &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.aki017.infoblog/categories/programing/">
+  <link rel="canonical" href="http://blog.aki017.info/blog/2013/01/31/report_xss/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,36 +64,139 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Programing</h1>
+    
+      <h1 class="entry-title">京都まゆまろ杯　第1回スマホアプリコンテストの脆弱性を報告しました</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T20:47:00+09:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h1><a href="http://cts-1.sakura.ne.jp/client/mayumaro/index.html">京都まゆまろ杯　第1回スマホアプリコンテスト</a></h1>
 
-  
-  <h2>2013</h2>
+<h2>日本が誇る歴史的世界都市を擁し、多様な地理、歴史、産業を育む「京都府」から【世界に羽ばたく】 エンジニアやクリエイターを生み出す。</h2>
 
-<article>
-  
-<h1><a href="/blog/2013/01/11/unity-webview/">Unity-WebView</a></h1>
-<time datetime="2013-01-11T12:33:00+09:00" pubdate><span class='month'>Jan</span> <span class='day'>11</span> <span class='year'>2013</span></time>
+<p>らしいです
+<img src="http://upload.aki017.info/file/2013-01-31-205132.png" alt="ScreenShot" /></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/android/'>Android</a>, <a class='category' href='/blog/categories/programing/'>Programing</a>, <a class='category' href='/blog/categories/unity/'>Unity</a></span>
-</footer>
+<h1>報告しました。</h1>
+
+<h2>報告した内容は以下の2点です</h2>
+
+<ul>
+<li>XSS</li>
+<li>CSRF
+
+<h1>XSSについて</h1>
+
+<ul>
+<li>次のURLには任意のプログラムを実行する事が出来る問題が<del>あります</del>ありました。
+   http://cts-1.sakura.ne.jp/client/mayumaro/</li>
+<li>この問題は上記サイトにて使用されている<a href="http://www.kyosuke.jp/yugajs/">yuga.js version: 0.7.1</a>にXSS脆弱性があるためです。</li>
+<li>次のURLが検証用URLとなります。
+
+<ul>
+<li>http://cts-1.sakura.ne.jp/client/mayumaro/#&quot;&gt;&lt;/a&gt;&lt;img src=/ onerror=alert(1)&gt;</li>
+</ul>
+</li>
+<li>またこのスクリプトはhttpのサイトだけではなくhttpsのサイトでも使われているため影響範囲はすべてのサイトと思われます。</li>
+<li>この問題はyuga.jsの最新版を使う事で解消されます。</li>
+</ul>
+</li>
+</ul>
 
 
-</article>
+<h1>CSRFについて</h1>
 
+<ul>
+<li>次のURLにはCSRF脆弱性が<del>あります</del>ありました。
+   https://cts-1.sakura.ne.jp/client/mayumaro/entry_logic_n.php</li>
+</ul>
+
+
+<h1>焼き肉食べたいです</h1>
+
+<p>  <a href="http://d.hatena.ne.jp/mala/20100222/1266850703">XSSとセキュリティリスクと正しい脆弱性報告のあり方</a></p>
+
+<h2>aki at aki017.infoにメールください</h2>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">aki017</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T20:47:00+09:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/xss/'>xss</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.aki017.info/blog/2013/01/31/report_xss/" data-via="aki017" data-counturl="http://blog.aki017.info/blog/2013/01/31/report_xss/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/11/unity-webview/" title="Previous Post: Unity-WebView">&laquo; Unity-WebView</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -193,7 +297,10 @@
       var disqus_shortname = 'aki017';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.aki017.info/blog/2013/01/31/report_xss/';
+        var disqus_url = 'http://blog.aki017.info/blog/2013/01/31/report_xss/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

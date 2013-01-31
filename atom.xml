@@ -4,7 +4,7 @@
   <title><![CDATA[メモ置き場]]></title>
   <link href="http://blog.aki017.info/atom.xml" rel="self"/>
   <link href="http://blog.aki017.info/"/>
-  <updated>2013-01-18T13:36:52+09:00</updated>
+  <updated>2013-01-31T22:15:14+09:00</updated>
   <id>http://blog.aki017.info/</id>
   <author>
     <name><![CDATA[aki017]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[京都まゆまろ杯　第1回スマホアプリコンテストの脆弱性を報告しました]]></title>
+    <link href="http://blog.aki017.info/blog/2013/01/31/report_xss/"/>
+    <updated>2013-01-31T20:47:00+09:00</updated>
+    <id>http://blog.aki017.info/blog/2013/01/31/report_xss</id>
+    <content type="html"><![CDATA[<h1><a href="http://cts-1.sakura.ne.jp/client/mayumaro/index.html">京都まゆまろ杯　第1回スマホアプリコンテスト</a></h1>
+
+<h2>日本が誇る歴史的世界都市を擁し、多様な地理、歴史、産業を育む「京都府」から【世界に羽ばたく】 エンジニアやクリエイターを生み出す。</h2>
+
+<p>らしいです
+<img src="http://upload.aki017.info/file/2013-01-31-205132.png" alt="ScreenShot" /></p>
+
+<h1>報告しました。</h1>
+
+<h2>報告した内容は以下の2点です</h2>
+
+<ul>
+<li>XSS</li>
+<li>CSRF
+
+<h1>XSSについて</h1>
+
+<ul>
+<li>次のURLには任意のプログラムを実行する事が出来る問題が<del>あります</del>ありました。
+   http://cts-1.sakura.ne.jp/client/mayumaro/</li>
+<li>この問題は上記サイトにて使用されている<a href="http://www.kyosuke.jp/yugajs/">yuga.js version: 0.7.1</a>にXSS脆弱性があるためです。</li>
+<li>次のURLが検証用URLとなります。
+
+<ul>
+<li>http://cts-1.sakura.ne.jp/client/mayumaro/#&quot;&gt;&lt;/a&gt;&lt;img src=/ onerror=alert(1)&gt;</li>
+</ul>
+</li>
+<li>またこのスクリプトはhttpのサイトだけではなくhttpsのサイトでも使われているため影響範囲はすべてのサイトと思われます。</li>
+<li>この問題はyuga.jsの最新版を使う事で解消されます。</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>CSRFについて</h1>
+
+<ul>
+<li>次のURLにはCSRF脆弱性が<del>あります</del>ありました。
+   https://cts-1.sakura.ne.jp/client/mayumaro/entry_logic_n.php</li>
+</ul>
+
+
+<h1>焼き肉食べたいです</h1>
+
+<p>  <a href="http://d.hatena.ne.jp/mala/20100222/1266850703">XSSとセキュリティリスクと正しい脆弱性報告のあり方</a></p>
+
+<h2>aki at aki017.infoにメールください</h2>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unity-WebView]]></title>

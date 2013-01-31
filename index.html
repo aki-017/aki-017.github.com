@@ -9,8 +9,8 @@
   <meta name="author" content="aki017">
 
   
-  <meta name="description" content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &hellip;">
+  <meta name="description" content="京都まゆまろ杯　第1回スマホアプリコンテスト 日本が誇る歴史的世界都市を擁し、多様な地理、歴史、産業を育む「京都府」から【世界に羽ばたく】 エンジニアやクリエイターを生み出す。 らしいです 報告しました。 報告した内容は以下の2点です XSS
+CSRF XSSについて &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/31/report_xss/">京都まゆまろ杯　第1回スマホアプリコンテストの脆弱性を報告しました</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T20:47:00+09:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/31/report_xss/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1><a href="http://cts-1.sakura.ne.jp/client/mayumaro/index.html">京都まゆまろ杯　第1回スマホアプリコンテスト</a></h1>
+
+<h2>日本が誇る歴史的世界都市を擁し、多様な地理、歴史、産業を育む「京都府」から【世界に羽ばたく】 エンジニアやクリエイターを生み出す。</h2>
+
+<p>らしいです
+<img src="http://upload.aki017.info/file/2013-01-31-205132.png" alt="ScreenShot" /></p>
+
+<h1>報告しました。</h1>
+
+<h2>報告した内容は以下の2点です</h2>
+
+<ul>
+<li>XSS</li>
+<li>CSRF
+
+<h1>XSSについて</h1>
+
+<ul>
+<li>次のURLには任意のプログラムを実行する事が出来る問題が<del>あります</del>ありました。
+   http://cts-1.sakura.ne.jp/client/mayumaro/</li>
+<li>この問題は上記サイトにて使用されている<a href="http://www.kyosuke.jp/yugajs/">yuga.js version: 0.7.1</a>にXSS脆弱性があるためです。</li>
+<li>次のURLが検証用URLとなります。
+
+<ul>
+<li>http://cts-1.sakura.ne.jp/client/mayumaro/#&quot;&gt;&lt;/a&gt;&lt;img src=/ onerror=alert(1)&gt;</li>
+</ul>
+</li>
+<li>またこのスクリプトはhttpのサイトだけではなくhttpsのサイトでも使われているため影響範囲はすべてのサイトと思われます。</li>
+<li>この問題はyuga.jsの最新版を使う事で解消されます。</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>CSRFについて</h1>
+
+<ul>
+<li>次のURLにはCSRF脆弱性が<del>あります</del>ありました。
+   https://cts-1.sakura.ne.jp/client/mayumaro/entry_logic_n.php</li>
+</ul>
+
+
+<h1>焼き肉食べたいです</h1>
+
+<p>  <a href="http://d.hatena.ne.jp/mala/20100222/1266850703">XSSとセキュリティリスクと正しい脆弱性報告のあり方</a></p>
+
+<h2>aki at aki017.infoにメールください</h2>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -478,48 +562,6 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/04/dotfiles/">Dotfilesいじくった</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-04T05:01:00+09:00" pubdate data-updated="true">Dec 4<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/04/dotfiles/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>こうなりました</p>
-
-<p><a href="https://github.com/aki-017/dotfiles">github</a>
-<img src="http://upload.aki017.info/file/2012-12-04-045719.png" alt="screenshot">
-<img src="http://upload.aki017.info/file/2012-12-04-045740.png" alt="screenshot"></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -535,6 +577,10 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/31/report_xss/">京都まゆまろ杯　第1回スマホアプリコンテストの脆弱性を報告しました</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/11/unity-webview/">Unity-WebView</a>
       </li>
     
@@ -548,10 +594,6 @@ tmux attach-session -t tmux-ssh</code></pre></noscript></div>
     
       <li class="post">
         <a href="/blog/2012/12/09/endofcamp/">フレキャン終わりましたね</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/09/nyaruko/">ニャル子</a>
       </li>
     
   </ul>
